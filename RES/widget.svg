@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xhtml="http://www.w3.org/1999/xhtml"
+     width="600" height="150">
+
+  <foreignObject width="600" height="150">
+    <xhtml:div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .container { display: flex; gap: 10px; font-family: sans-serif; }
+        .item {
+          flex: 1;
+          padding: 10px;
+          background: #28a745;
+          color: white;
+          border-radius: 4px;
+          text-align: center;
+        }
+      </style>
+
+      <div class="container">
+        <div class="item">Колонка 1</div>
+        <div class="item">Колонка 2</div>
+        <div class="item">Колонка 3</div>
+      </div>
+    </xhtml:div>
+  </foreignObject>
+</svg>
