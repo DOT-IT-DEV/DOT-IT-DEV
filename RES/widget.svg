@@ -1,26 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      xmlns:xhtml="http://www.w3.org/1999/xhtml"
-     width="600" height="150">
+     width="800" height="1000">
 
-  <foreignObject width="600" height="150">
+  <foreignObject width="800" height="1000">
     <xhtml:div xmlns="http://www.w3.org/1999/xhtml">
       <style>
-        .container { display: flex; gap: 10px; font-family: sans-serif; }
-        .item {
-          flex: 1;
-          padding: 10px;
-          background: #28a745;
-          color: white;
-          border-radius: 4px;
-          text-align: center;
+        @font-face {
+          font-family: 'Inter';
+          src: url(/static/FONT/Inter.ttf) format('ttf');
+          font-weight: 400;
+        }
+        :root {
+          --BG_COLOR: #fff;
+          --PRIMARY-COLOR: #1e1e1e;
+          --padding: 5.5vh 6.25vw;
+        }
+        * {
+          margin: 0;
+          padding: 0;
+          --outline: none;
+        }
+        html, body, .svg-body {
+          background-color: var(--BG_COLOR);
+          color: var(--PRIMARY-COLOR);
+          font-family: 'Inter', sans-serif;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+        }
+        .nav {
+          z-index: 100;
+          width: 100%;
+          padding: var(--padding);
+          position: fixed;
+          top: 0;
+          left: 0;
+          background-color: rgba(255, 255, 255, 0.5);
+          backdrop-filter: blur(7px);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .nav img {
+          width: 35px;
+          object-fit: contain;
+        }
+        .nav .map {
+          display: flex;
+        }
+        .nav .map a {
+          margin: 0 15px;
+          opacity: 0.5;
+          text-decoration: none;
+          color: var(--PRIMARY-COLOR);
+        }
+        .nav .map a#act {
+          opacity: 1;
+        }
+        .block_1 {
+          width: 100%;
+          min-height: 400px;
+          padding: 240px 120px;
+          box-sizing: border-box;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .block_1 .line_1,
+        .block_1 .line_2 {
+          width: 100%;
+          display: flex;
+          align-items: flex-end;
+          box-sizing: border-box;
+        }
+        .block_1 .line_1 h1,
+        .block_1 .line_2 h1 {
+          width: 100%;
+          white-space: nowrap;
+        }
+        .block_1 .line_2 p {
+          width: 80%;
+          font-size: 24px;
+          opacity: 0.75;
+        }
+        h1 {
+          font-size: 160px;
+          font-weight: 400;
+        }
+        #h-sep, #v-sep {
+          opacity: 0;
+        }
+        #h-sep {
+          height: 120px;
+          width: 100%;
+        }
+        #v-sep {
+          width: 120px;
+          height: 100%;
+        }
+        #right-text {
+          text-align: right;
+        }
+        #second {
+          width: auto;
+          opacity: 0.25;
+          transition: all 0.25s linear;
+          cursor: pointer;
+        }
+        #second:active {
+          transform: scale(0.5);
+        }
+        #firstlinecontainer {
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 0;
+          transition: width 2s ease-in-out;
         }
       </style>
 
-      <div class="container">
-        <div class="item">Колонка 1</div>
-        <div class="item">Колонка 2</div>
-        <div class="item">Колонка 3</div>
+      <div class="svg-body">
+        <!-- Навигация -->
+        <div class="nav">
+          <a href="#"><img src="./MEDIA/ICON/LOGO.svg" alt="DOT LOGO"/></a>
+          <div class="map">
+            <a id="act" href="#">Главная</a>
+            <a href="#">Софт</a>
+            <a href="#">Контакты</a>
+          </div>
+          <a href="#"><img src="./MEDIA/ICON/USER.svg" alt="DOT USER"/></a>
+        </div>
+
+        <!-- Первый экран -->
+        <div class="block_1">
+          <div class="content">
+            <div class="line_1">
+              <h1 id="firstlinecontainer">DOT DEVELOPER</h1>
+              <h1 class="magic-click" id="second" onclick="location.href='#'">→</h1>
+            </div>
+            <span id="h-sep">.</span>
+            <div class="line_2">
+              <p>
+                современный проект, направленный на создание инновационного программного обеспечения,
+                сочетающего стильный дизайн и функциональность для Windows 10\11
+              </p>
+              <span id="v-sep">.</span>
+              <h1 id="right-text">IT ПРОЕКТ</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Второй экран (дубль первого) -->
+        <div class="block_1">
+          <div class="content">
+            <div class="line_1">
+              <h1 id="firstlinecontainer">DOT DEVELOPER</h1>
+              <h1 class="magic-click" id="second" onclick="location.href='#'">→</h1>
+            </div>
+            <span id="h-sep">.</span>
+            <div class="line_2">
+              <p>
+                современный проект, направленный на создание инновационного программного обеспечения,
+                сочетающего стильный дизайн и функциональность для Windows 10\11
+              </p>
+              <span id="v-sep">.</span>
+              <h1 id="right-text">IT ПРОЕКТ</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </xhtml:div>
   </foreignObject>
